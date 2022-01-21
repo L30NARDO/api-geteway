@@ -1,0 +1,7 @@
+services:
+  - name: user
+    url: http://localhost:3001
+  - name: immobile
+    url: http://localhost:3002
+  - name: rent
+    url: http://localhost:3003
