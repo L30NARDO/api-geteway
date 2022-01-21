@@ -1,1 +1,4 @@
 /node_modules
+packege-lock.json
+.eslinctrc.json
+config.yml
