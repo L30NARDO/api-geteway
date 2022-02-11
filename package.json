@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --extensions \".ts\" --out-dir dist --copy-files --no-copy-ignored",
-    "start": "node ./dist/server.ts",
+    "start": "babel-node src/server.ts",
     "server": "nodemon src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
     "@types/helmet": "^4.0.0",
     "@types/js-yaml": "^4.0.5",
     "@types/morgan": "^1.9.3",
+    "babel-cli": "^6.26.0",
     "eslint": "^8.6.0",
     "express": "^4.17.2",
     "express-http-proxy": "^1.6.3",
