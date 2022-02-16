@@ -30,7 +30,12 @@ app.use(
   httpProxy("https://imoveisbackend.herokuapp.com", { setTimeout: 3000 })
 );
 app.use("/user", httpProxy("http://localhost:3002", { setTimeout: 3000 }));
-app.use("/rent", httpProxy("http://localhost:3003", { setTimeout: 3000 }));
+app.use(
+  "/rent",
+  httpProxy("https://irent-rent.herokuapp.com/api/v1/rent", {
+    setTimeout: 3000,
+  })
+);
 
 app.listen(PORT, () =>
   console.log("\n||======> API GETEWAY STARTED <======||")
