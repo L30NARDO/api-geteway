@@ -12,7 +12,7 @@ const app = express();
 // const services = load(readConfig, { json: true });
 
 const PORT = process.env.PORT || 3000;
-
+const rent = "https://irent-rent.herokuapp.com/api/v1/rent";
 app.use(logger("dev"));
 app.use(helmet());
 app.use(express.json());
@@ -29,12 +29,13 @@ app.use(
   "/immobile",
   httpProxy("https://imoveisbackend.herokuapp.com", { setTimeout: 3000 })
 );
-app.use("/user", httpProxy("http://localhost:3002", { setTimeout: 3000 }));
+app.use(
+  "/user",
+  httpProxy("https://irent-users.herokuapp.com", { setTimeout: 3000 })
+);
 app.use(
   "/rent",
-  httpProxy("https://irent-rent.herokuapp.com/api/v1/rent", {
-    setTimeout: 3000,
-  })
+  httpProxy("https://irent-rent.herokuapp.com", { setTimeout: 3000 })
 );
 
 app.listen(PORT, () =>
